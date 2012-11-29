@@ -11,9 +11,9 @@
     %link{:href => "http://fonts.googleapis.com/css?family=Oswald:400,700,300|Open+Sans:400,700,300", :rel => "stylesheet", :type => "text/css"}/
     = csrf_meta_tags
   %body
+    = render "navbar"
     #main
       #content_wrapper
-        = render "navbar"
         = render "notice"
         = render "error"
         = yield

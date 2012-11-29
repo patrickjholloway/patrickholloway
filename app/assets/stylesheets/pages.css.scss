@@ -1,6 +1,10 @@
 $lt-blue:#dee;
 $red:#e55;
 
+.fixed-width {
+	width:960px;
+	margin:auto;
+}
 
 #side {
 	.biopic {
@@ -35,5 +39,9 @@ $red:#e55;
 	.hero-unit {
 		background-color:$lt-blue;
 		color:#000;
+		
+		button.demo{
+			$linkColor:green;
+		}
 	}
 }
