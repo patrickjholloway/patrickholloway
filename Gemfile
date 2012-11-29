@@ -2,14 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'rake', '10.0.2'
+gem 'devise'
 gem "activerecord-postgres-hstore", "~> 0.4.1"
-gem "bcrypt-ruby", :require => "bcrypt"
 gem 'valid_email', :require => 'valid_email/email_validator'
 gem 'bootstrap-will_paginate' # auto pagination of bootstrap pages
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "mail", "2.4.4"
 gem 'client_side_validations' # ajaxified client validations matched with model validations
-gem "mailboxer", "~> 0.8.0" # intra-site messaging/inbox gem
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', # twitter bootstrap
                               :git => 'git://github.com/anjlab/bootstrap-rails.git'
 

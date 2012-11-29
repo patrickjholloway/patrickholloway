@@ -1,0 +1,19 @@
+%nav.navbar
+	.navbar-inner
+		%a.brand{:href => "#"}PH
+		%ul.nav
+			%li
+				%a{:href => "/"} Home
+			%li.dropdown
+				%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+					%span More
+					%span.caret
+				%ul.dropdown-menu
+					%li
+						= link_to "GitHub", "#"
+					%li
+						= link_to "Demo App", "#"
+					%li
+						= link_to "Resume", "#"
+			%li
+				= link_to "About", "#"

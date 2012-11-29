@@ -1,0 +1,30 @@
+/* This can be excluded by manually specifying individual stylesheets in a custom View Layout */
+
+body {
+	background-color: $background-color;
+	color: #333;
+	font-family: $body-font;
+	font-size: 10pt;
+	line-height: 1.2em;
+	letter-spacing: 0;
+	text-align: left;
+	word-spacing: normal;
+	text-decoration: none;
+}
+
+#main {
+	width:100%;
+	margin:0px auto !important;
+	background-image:url("texture3.jpg");
+	background-size:13%;
+	background-repeat:repeat;
+	overflow-y:auto;
+}
+
+#content_wrapper {
+	position:relative;
+	width:$content-width;
+	min-height:700px;
+	margin:0px auto !important;
+	padding-bottom:50px !important;
+}
