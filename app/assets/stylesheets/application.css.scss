@@ -1,6 +1,6 @@
 /*
  *= require_self
- *= require twitter/bootstrap
+ *= require app_bootstrap
  */
 
 /* Global mixins and variables */
@@ -73,6 +73,12 @@ $header-font:'Droid Sans', sans-serif;
 @mixin vert-margin($margin) {
 	margin-top:$margin;
 	margin-bottom:$margin;
+}
+
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
 }
 
 @import "pages.css.scss";

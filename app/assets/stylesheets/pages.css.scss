@@ -1,3 +1,39 @@
-#main h1 {
+$lt-blue:#dee;
+$red:#e55;
+
+
+#side {
+	.biopic {
+		width:250px;
+		margin:20px;
+		margin-bottom:0px;
+	}
 	
+	@include border-radius(6px);
+	background-color:$red;
+	address {
+		margin-top:15px;
+		padding:19px;
+	}
+
+	#side-nav {
+		@include border-radius(6px);
+		
+		padding:19px;
+		
+		h3 {
+			margin-left:10px;
+		}
+
+		ul {
+
+		}
+	}
+}
+
+#main {
+	.hero-unit {
+		background-color:$lt-blue;
+		color:#000;
+	}
 }
