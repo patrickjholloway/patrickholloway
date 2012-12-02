@@ -18,10 +18,8 @@ group :development, :test do
   gem 'guard-rspec'
 end
 
-group :development do
-  gem 'haml-rails'
-  gem 'hpricot'
-end
+gem 'haml-rails'
+gem 'hpricot'
 
 group :test do
   gem 'capybara'
