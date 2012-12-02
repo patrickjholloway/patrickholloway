@@ -1,10 +1,14 @@
 %nav.navbar.navbar-static-top
 	.navbar-inner
 		.fixed-width
-			%a.brand{:href => "#"}PH
+			%a.brand{:href => "/"}PH
 			%ul.nav
-				%li.active
-					%a{:href => "/"} Home
+				-if @active == 'home'
+					%li.active
+						%a{:href => "/"} Home
+				-else
+					%li
+						%a{:href => "/"} Home
 				%li.dropdown
 					%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
 						%span More
@@ -16,5 +20,9 @@
 							= link_to "Demo App", "#"
 						%li
 							= link_to "Resume", "#"
-				%li
-					= link_to "About", "#"
+				-if @active == 'about'
+					%li.active
+						= link_to "About", about_path
+				-else
+					%li
+						= link_to "About", about_path

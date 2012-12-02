@@ -14,7 +14,7 @@ $red:#e55;
 	}
 	
 	@include border-radius(6px);
-	background-color:$red;
+	background-color:#555;
 	address {
 		margin-top:15px;
 		padding:19px;
@@ -33,6 +33,13 @@ $red:#e55;
 
 		}
 	}
+}
+
+#bio {
+	background-color:$lt-blue;
+	color:#000;
+	padding:19px;
+	@include border-radius(6px);
 }
 
 #main {

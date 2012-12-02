@@ -1,0 +1,23 @@
+#about.row
+	#bio.span6
+		%h2 Bio
+	#side.span4
+		= image_tag("patrickholloway.jpg", class: "img-polaroid biopic")
+		:plain
+			<address class="well span3">
+			  Patrick Holloway<br>
+			  41 Albion St.<br>
+			  Medford, MA 02155<br>
+			  <abbr title="Phone">P:</abbr> (781) 960-3127<br>
+				<a href="mailto:#">patrickjholloway@gmail.com</a>
+			</address>
+		%nav.span3.well{id: "side-nav"}
+			%ul.nav.nav-pills.nav-stacked
+				%li
+					%a{href: "#"}Home
+				%li
+					%a{href: "#"}Demo
+				%li.active
+					%a{href: "#"}About
+				%li
+					%a{href: "#"}Resume
