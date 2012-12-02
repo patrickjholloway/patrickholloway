@@ -20,3 +20,5 @@ In this project I incorporate the following:
 On a basic level, this demonstrates that I not only know the individual technologies, but how to incorporate them to make clean, reusable, and readable code.
 
 I am not a seasoned developer, but an up and coming, self-taught guy eager to learn more.
+
+The "Demo" section of the site is the next on the plate, seeing as the rest of the site is essentially serving up static pages. I'm hoping to incorporate something that captures the power of rails, demonstrates some front-end skills with jQuery and AJAX, and ties in a restful web API.
