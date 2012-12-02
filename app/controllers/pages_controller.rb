@@ -1,11 +1,15 @@
 class PagesController < ApplicationController
   
   def home
-    @active = 'home'
+    @active = 'home' # for bootstrap tab navbar
   end
   
   def about
-    @active = 'about'
+    @active = 'about' # for bootstrap tab navbar
+  end
+  
+  def resume
+    @active = 'resume' # for bootstrap tab navbar
   end
   
 end

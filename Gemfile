@@ -19,6 +19,7 @@ group :development, :test do
 end
 
 gem 'haml-rails'
+gem 'rdiscount'
 gem 'hpricot'
 
 group :test do

@@ -1,6 +1,6 @@
 # Patrick Holloway's Resume App
 
-This is a place for me to put some basic code and relevant recruiting information on display for prospective employers. The bulk of my experience so far has been on a web application that is still in active development and isn't mine to show off to the world. While I am job hunting I still need *something* to show CTOs, hiring managers, and recruiters.
+This is a place for me to put some basic code and relevant recruiting information on display for prospective employers. The bulk of my experience so far has been on a web application that is still in active development and isn't mine to show off to the world. While I am job hunting, I still need *something* to show CTOs, hiring managers, and recruiters.
 
 The code is very simple, as I only have a few hours to build it, but you can see that I am comfortable with Ruby on Rails and associated technologies.
 
