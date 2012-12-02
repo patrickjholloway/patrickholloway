@@ -5,6 +5,7 @@ Patrickholloway::Application.routes.draw do
   get '/resume' => 'pages#resume', as: 'resume'
   
   get '/demo' => 'sessions#new', as: 'demo'
+  get '/sign_in' => 'sessions#new', as: 'sign_in'
   
   root :to => 'pages#home'
 end

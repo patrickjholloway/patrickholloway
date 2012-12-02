@@ -4,41 +4,17 @@
 		%h2.lead Junior Rails Developer
 		%p.pull-left
 			%dl
-				%dt Back End
-				%dd Ruby on Rails
-				%dd LAMP stack
-		%p
-			%dl
 				%dt Front End & UX Design
 				%dd HTML, CSS, Javascript
 				%dd jQuery & jQuery UI
 				%dd AJAX
-				%dd Twitter Bootstrap (obviously)
+				%dd Twitter Bootstrap
 				%dd Adobe Creative Suite
-		%p
 			%dl
 				%dt Rails Development
-				%dd HAML & SASS (still working towards Coffee Script)
+				%dd HAML & SASS
+				%dd Various SQL flavors
 				%dd Experience with NoSQL (Mongo, Couch DB, and Neo4j)
 				%dd Cloud deployment (Heroku, AWS)
 		%a{href: "#", class: "btn btn-primary btn-large demo pull-right"}Demo
-	#side.span4
-		= image_tag("patrickholloway.jpg", class: "img-polaroid biopic")
-		:plain
-			<address class="well span3">
-			  Patrick Holloway<br>
-			  41 Albion St.<br>
-			  Medford, MA 02155<br>
-			  <abbr title="Phone">P:</abbr> (781) 960-3127<br>
-				<a href="mailto:#">patrickjholloway@gmail.com</a>
-			</address>
-		%nav.span3.well{id: "side-nav"}
-			%ul.nav.nav-pills.nav-stacked
-				%li.active 
-					%a{href: "#"}Home
-				%li
-					%a{href: "#"}Demo
-				%li
-					%a{href: "#"}About
-				%li
-					%a{href: "#"}Resume
+	= render partial: "sidenav"

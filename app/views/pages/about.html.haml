@@ -1,23 +1,23 @@
 #about.row
 	#bio.span6
-		%h2 Bio
-	#side.span4
-		= image_tag("patrickholloway.jpg", class: "img-polaroid biopic")
-		:plain
-			<address class="well span3">
-			  Patrick Holloway<br>
-			  41 Albion St.<br>
-			  Medford, MA 02155<br>
-			  <abbr title="Phone">P:</abbr> (781) 960-3127<br>
-				<a href="mailto:#">patrickjholloway@gmail.com</a>
-			</address>
-		%nav.span3.well{id: "side-nav"}
-			%ul.nav.nav-pills.nav-stacked
-				%li
-					%a{href: "#"}Home
-				%li
-					%a{href: "#"}Demo
-				%li.active
-					%a{href: "#"}About
-				%li
-					%a{href: "#"}Resume
+		%h2 Hello!
+		%p Please allow me to introduce myself. My name is Patrick and I am a self-taught Ruby on Rails developer from Boston. Like many Ruby users, I love nice clean code that is readable, reusable, and elegant. I am incredibly passionate about my work and love learning more.
+		
+		%p I went to school for computer science for a few years before I became a Fine Arts major. As it turns out, I still have code running through these veins, because I'm back in it and I'm really excited about emerging web technologies.
+		
+		%p When I was in school web development seemed like a total hack. With the browser wars holding back Javascript, the beast that is Java, and bowing the the nightmare that is Internet Explorer, web development lacked appeal for my sensibilities. When I use modern technologies like Rails, jQuery, and HTML5, I get excited by the possibility and the accessibility.
+		
+		%p If you are looking for a seasoned veteran, I may not be your guy. However, many start-ups are looking for fresh talent and a diverse skill set. I am really good at both the back-end and front-end development, and always learning more.
+		
+		%p I'm still diving into new stuff every day and incorporating it into my work. Here are a few new things I am currently assimilating and practicing:
+		:markdown
+			-  Ember.js
+			-  Backbone.js
+			-  Neo4j
+			-  Hadoop/HBase + Map-Reduce
+			-  Node.js
+			-  iOS development
+			-  Chef & CloudFormation
+			
+			Please look at my [resume](http://patrickjholloway.herokuapp.com/resume.hmtl) for my skill set and work history. I am actively looking for a  job, particularly within a rails-based social media web application start-up.
+	= render partial: "sidenav"
