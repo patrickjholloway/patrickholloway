@@ -8,86 +8,31 @@
 				%i.icon-fire.icon-white
 				Reset
 	#controls.row
-		.span10
+		.span13
 			.row
 				%article.span6
 					%hgroup
 						%h1#header_unit Web Font Workshop
 						%h2#subheader_unit Test your font combos.
 					%p#paragraph_unit This paragraph exemplifies the type of paragraph that would be used in an example paragraph. If there were a different type of paragraph it might say something different, but it isn't. Don't expect to get a different paragraph any time soon. This is as good as it is going to get.
-				#toolbox.span4.accordion
-					#fonts.accordion-group
-						.accordion-heading
-							= link_to '#', {class: "accordion-toggle collapseOne"}  do
-								%i.icon-chevron-down
-								Fonts
-							#collapseOne.accordion-body.collapse.in
-								.accordion-inner
-									=form_tag 'font_sets/select' do
-										= select_tag 'Font Set...', options_for_select([['Default', 0],['Sans Serif', 1],['Serif', 2],['Display', 3],['Custom', 4]], 5), multiple: 'multiple'
-										= submit_tag "Go", class: "btn pull-right"
-					#size.accordion-group
-						.accordion-heading
-							= link_to '#', {class: "accordion-toggle"}  do
-								%i.icon-chevron-down
-								Font Size
-							#collapseTwo.accordion-body.collapse
-								.accordion-inner
-									:markdown
-										-  12pt
-										-  16pt
-										-  20pt
-										-  24pt
-										-  28pt
-										-  32pt
-										-  36pt
-										-  40pt
-					#font_styles.accordion-group
-						.accordion-heading
-							= link_to '#', {class: "accordion-toggle"}  do
-								%i.icon-chevron-down
-								Font Style
-							#collapseThree.accordion-body.collapse
-								.accordion-inner
-									:markdown
-										-  Bold
-										-  Italic
-										-  Underscore
-					#text_transform.accordion-group
-						.accordion-heading
-							= link_to '#', {class: "accordion-toggle"}  do
-								%i.icon-chevron-down
-								Text Transform
-							#collapseFour.accordion-body.collapse
-								.accordion-inner
-									:markdown
-										- Normal
-										- Capitalize
-										- Lowercase
-										- Uppercase
-					#line_height.accordion-group
-						.accordion-heading
-							= link_to '#', {classs: "accordion-toggle"}  do
-								%i.icon-chevron-down
-								Line Height
-							#collapseFive.accordion-body.collapse
-								.accordion-inner
-									= link_to '#', {class: "btn btn pull-left"}  do
-										%i.icon-plus
-										%i.icon-plus
-									= link_to '#', {class: "btn btn pull-left"}  do
-										%i.icon-plus
-									= link_to '#', {class: "btn btn pull-left"}  do
-										%i.icon-minus
-									= link_to '#', {class: "btn btn pull-left"}  do
-										%i.icon-minus
-										%i.icon-minus
-		%section#fonts.span10
-			- @user_fonts.each do |font|
-				- content_for :head do
-					= google_webfonts_link_tag font.data["family"] => font.data["variants"]
-				%span.font
-					= font.data["family"]
+				%section#fonts.span3
+					- @user_fonts.each do |font|
+						- content_for :head do
+							= google_webfonts_link_tag font.data["family"] => font.data["variants"]
+						%span.font
+							= font.data["family"]
+						%span.font-delete
+							%i.icon-minus.pull-right
+				%section#font_size.span3
+					:markdown
+						-  40pt
+						-  36pt
+						-  32pt
+						-  28pt
+						-  24pt
+						-  20pt
+						-  16pt
+						-  12pt
 :javascript
 			$('document').ready(function(){
 				Workshop.new_style.initialize();

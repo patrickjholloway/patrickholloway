@@ -23,7 +23,7 @@ class Workshop.Views.FontsIndex extends Backbone.View
 		clickedFont = @fonts.where({name: clickedFontName })[0]
 		userFonts.push(clickedFont.attributes._id)
 		@persistent_user.set("font_ids", userFonts)
-		@persistent_user.save( {}, success: -> alert "success" )
+		@persistent_user.save {}, success: -> alert "success"
 	
 	assignCurrentUser: =>
 		@persistent_user = new Workshop.Models.User({id: @current_user.id})

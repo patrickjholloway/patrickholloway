@@ -1,0 +1,69 @@
+=# May be used in future for controlling other styling changes to font size and such
+
+#toolbox.span4.accordion
+	#fonts.accordion-group
+		.accordion-heading
+			= link_to '#', {class: "accordion-toggle collapseOne"}  do
+				%i.icon-chevron-down
+				Fonts
+			#collapseOne.accordion-body.collapse.in
+				.accordion-inner
+					=form_tag 'font_sets/select' do
+						= select_tag 'Font Set...', options_for_select([['Default', 0],['Sans Serif', 1],['Serif', 2],['Display', 3],['Custom', 4]], 5), multiple: 'multiple'
+						= submit_tag "Go", class: "btn pull-right"
+	#size.accordion-group
+		.accordion-heading
+			= link_to '#', {class: "accordion-toggle"}  do
+				%i.icon-chevron-down
+				Font Size
+			#collapseTwo.accordion-body.collapse
+				.accordion-inner
+					:markdown
+						-  40pt
+						-  36pt
+						-  32pt
+						-  28pt
+						-  24pt
+						-  20pt
+						-  16pt
+						-  12pt
+	#font_styles.accordion-group
+		.accordion-heading
+			= link_to '#', {class: "accordion-toggle"}  do
+				%i.icon-chevron-down
+				Font Style
+			#collapseThree.accordion-body.collapse
+				.accordion-inner
+					:markdown
+						-  Bold
+						-  Italic
+						-  Underscore
+	#text_transform.accordion-group
+		.accordion-heading
+			= link_to '#', {class: "accordion-toggle"}  do
+				%i.icon-chevron-down
+				Text Transform
+			#collapseFour.accordion-body.collapse
+				.accordion-inner
+					:markdown
+						- Normal
+						- Capitalize
+						- Lowercase
+						- Uppercase
+	#line_height.accordion-group
+		.accordion-heading
+			= link_to '#', {classs: "accordion-toggle"}  do
+				%i.icon-chevron-down
+				Line Height
+			#collapseFive.accordion-body.collapse
+				.accordion-inner
+					= link_to '#', {class: "btn btn pull-left"}  do
+						%i.icon-plus
+						%i.icon-plus
+					= link_to '#', {class: "btn btn pull-left"}  do
+						%i.icon-plus
+					= link_to '#', {class: "btn btn pull-left"}  do
+						%i.icon-minus
+					= link_to '#', {class: "btn btn pull-left"}  do
+						%i.icon-minus
+						%i.icon-minus
