@@ -1,0 +1,1 @@
+class Workshop.Models.Font extends Backbone.Model

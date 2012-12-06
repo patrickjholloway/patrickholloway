@@ -1,0 +1,21 @@
+.row
+	.span10
+		.row
+			%section#fonts.span7
+				= paginate @fonts
+				- @fonts.each do |font|
+					- content_for :head do
+						= google_webfonts_link_tag font.data["family"] => font.data["variants"]
+					%span.font
+						= font.data["family"]
+						%i.icon-plus.pull-right
+			%section#user_fonts.span3
+				.well
+					%h2 Hello
+					= @title
+					- @user_fonts.each do |font|
+						= font.name
+:javascript
+	$('document').ready(function(){
+		Workshop.fonts.initialize();
+	})

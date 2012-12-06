@@ -1,0 +1,41 @@
+.font {
+	float:left;
+	padding:15px;
+	padding-left:17px;
+	padding-right:17px;
+	border-radius:5px;
+	margin-bottom:1px;
+	margin-right:1px;
+	cursor:pointer;
+	font-size:16pt;
+	background-color:#DEE;
+	color:#000;
+	&:hover {
+		background-color:#699;
+		color:#fff;
+	}
+	width:80%;
+}
+
+
+#dashboard {
+
+	#controls {
+		margin-top:20px;
+	}
+
+	ul {
+		li {			
+			list-style:none;
+		}
+	}
+
+	#dashboard_nav
+	{
+		padding:10px;
+		background-color:#aea;
+		height:40px;
+		@include border-radius(5px)
+	}
+
+}

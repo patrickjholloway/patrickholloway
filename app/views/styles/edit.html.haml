@@ -1,0 +1,52 @@
+:javascript
+	$(function() {
+		Workshop.new.initialize();
+	});
+#dashboard
+	%h1 Font Tester
+	#controls
+		.row.span10
+			.row.span6
+				%article.well
+					%hgroup
+						%h1 Web Font Workshop
+						%h2 Test your font combos.
+					%p This paragraph exemplifies the type of paragraph that would be used in an example paragraph. If there were a different type of paragraph it might say something different, but it isn't. Don't expect to get a different paragraph any time soon. This is as good as it is going to get.
+				=render "css_attributes"
+			.row.span3
+				#fonts.span3.well
+					%h2 Fonts
+					=form_tag 'font_sets/select' do
+						= select_tag 'Font Set...', options_for_select([['Default', 0],['Sans Serif', 1],['Serif', 2],['Display', 3],['Custom', 4]], 5)
+						= submit_tag "Go", class: "btn pull-right"
+				#size.span3.well
+					:markdown
+						## Font Size
+						-  12pt
+						-  16pt
+						-  20pt
+						-  24pt
+						-  28pt
+						-  32pt
+						-  36pt
+						-  40pt
+				#font_styles.span3.well
+					:markdown
+						## Styles
+						-  Bold
+						-  Italic
+						-  Underscore
+				#text_transform.span3.well
+					:markdown
+						## Text Transform
+						- Normal
+						- Capitalize
+						- Lowercase
+						- Uppercase
+				#line_height.span3.well
+					:markdown
+						## Line Height
+						- .8
+						- 1.1
+						- 1.2
+						- 1.4
