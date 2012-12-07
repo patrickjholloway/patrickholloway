@@ -1,12 +1,14 @@
 #dashboard.row
 	#dashboard_nav
 		.dashboard_nav_inner
-			= link_to '#', {class: "btn btn-success"}  do
-				%i.icon-file.icon-white
-				Save
-			= link_to '#', {class: "btn btn-danger"}  do
-				%i.icon-fire.icon-white
-				Reset
+			#save
+				= link_to '#', {class: "btn btn-success"}  do
+					%i.icon-file.icon-white
+					Save
+			#reset
+				= link_to '#', {class: "btn btn-danger"}  do
+					%i.icon-fire.icon-white
+					Reset
 	#controls.row
 		.span13
 			.row

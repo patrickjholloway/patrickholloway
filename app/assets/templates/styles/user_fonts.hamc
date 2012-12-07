@@ -1,0 +1,9 @@
+%section#user_fonts.span3
+				.well
+					%h2 MyFonts
+					%ul
+						- @user_fonts.each do |font|
+							%li.font-simple
+								= font.name
+							.clearfix
+					.clearfix

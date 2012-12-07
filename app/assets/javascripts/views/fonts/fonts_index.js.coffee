@@ -2,6 +2,7 @@ class Workshop.Views.FontsIndex extends Backbone.View
 	el: '#content_wrapper'
 	
 	initialize: ->
+		@stylizeFonts()
 		@fetchCurrentUser()
 		@fetchFonts()
 		_.bindAll(@)
@@ -13,9 +14,12 @@ class Workshop.Views.FontsIndex extends Backbone.View
 
 	whiteIcon: (e) =>
 		$(e.target).children('.icon-plus').addClass('icon-white')
+		
 	blackIcon: (e) =>
 		$(e.target).children('.icon-plus').removeClass('icon-white')
 	
+	stylizeFonts: ->	
+		$('.font').css('font-family', () -> $(this).text())
 	addHideFont: (e) =>
 		$(e.target).hide()
 		clickedFontName = $(e.target).text().trim()	

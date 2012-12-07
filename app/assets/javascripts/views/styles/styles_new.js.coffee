@@ -7,7 +7,6 @@ class Workshop.Views.StylesNew extends Backbone.View
 			@stylizeUserFonts()
 			@stylizeFontSize()
 			@fetchCurrentUser()
-			@fetchFonts()
 			@target = $('#header_unit')
 			_.bindAll(@)
 		
@@ -17,13 +16,32 @@ class Workshop.Views.StylesNew extends Backbone.View
 			'click #subheader_unit': 'targetSubheader'
 			'click #paragraph_unit': 'targetParagraph'
 			'click #font_size li': 'updateTargetedFontSize'
-		
+			'click #save a': 'save'
+			'click #reset a': 'reset'
+			
+# Initialize only
+
 		stylizeUserFonts: ->
 			$('.font').css 'font-family', () -> $(@).text()
-		
+
 		stylizeFontSize: ->
 			$('#font_size li').css 'font-size', () -> $(@).text()
 			$('#font_size li').css 'line-height', () -> $(@).text()
+
+		fetchCurrentUser: =>
+			@current_user = new Workshop.Models.Currentuser
+			@current_user.fetch({ success: => @assignCurrentUser() })
+
+		assignCurrentUser: =>
+			@persistent_user = new Workshop.Models.User({id: @current_user.id})
+			@persistent_user.fetch()
+		
+# Screen Behavior
+
+		reset: (ev) =>
+			$('#paragraph_unit').css({'font-size': "12pt"});
+			
+		
 		
 		updateTargetedFont: (ev) =>
 			$(@target).css('font-family', $(ev.target).css('font-family'))
@@ -36,7 +54,7 @@ class Workshop.Views.StylesNew extends Backbone.View
 		clickFeedback: (target) ->
 			$(target).animate({backgroundColor: '#ddd'}, 20, () -> $(@).animate({backgroundColor: '#fff'}, 1000, 'easeOutQuad'))
 	
-		# Targeting
+# Targeting
 		
 		targetParagraph: ->
 			@target = $('#paragraph_unit')
@@ -49,15 +67,3 @@ class Workshop.Views.StylesNew extends Backbone.View
 		targetHeader: ->
 			@target = $('#header_unit')
 			@clickFeedback('#header_unit')
-			
-		fetchFonts: =>
-			@fonts = new Workshop.Collections.Fonts
-			@fonts.fetch()
-
-		fetchCurrentUser: =>
-			@current_user = new Workshop.Models.Currentuser
-			@current_user.fetch({ success: => @assignCurrentUser() })
-		
-		assignCurrentUser: =>
-			@persistent_user = new Workshop.Models.User({id: @current_user.id})
-			@persistent_user.fetch()

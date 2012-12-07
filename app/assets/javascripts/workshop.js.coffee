@@ -4,9 +4,8 @@ window.Workshop =
 	Views: {}
 	new_style:
 		initialize: ->
-			view = new Workshop.Views.StylesNew
-			
+			pageView = new Workshop.Views.StylesNew
 	fonts:
 		initialize:->
-			$('.font').css('font-family', () -> $(this).text())
-			view = new Workshop.Views.FontsIndex
+			#pageView = new Workshop.Views.FontsIndex
+			userFontsView = new Workshop.Views.UserFonts
