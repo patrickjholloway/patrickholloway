@@ -14,12 +14,11 @@
 						%span More
 						%span.caret
 					%ul.dropdown-menu
-						%li
-							= link_to "GitHub", "https://github.com/patrickjholloway/patrickholloway"
-						%li
-							= link_to "Demo App", demo_path
-						%li
-							= link_to "Resume", resume_path
+						%li>= link_to "GitHub", "https://github.com/patrickjholloway/patrickholloway"
+						%li>= link_to "Demo App", demo_path
+						%li>= link_to "Resume", resume_path
+						%li>= link_to "Twitter", "https://twitter.com/digitalpixelpro"
+							
 				-if @active == 'about'
 					%li.active
 						= link_to "About", about_path
