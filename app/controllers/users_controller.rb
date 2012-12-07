@@ -1,13 +1,5 @@
 class UsersController < ApplicationController
-  
-  def currentuser
-    @user = User.find(current_user.id)
-
-    respond_to do |format|
-      format.json { render json: @user }
-    end
-  end
-  
+    
   def index
     @users = User.page(params[:page]).per(50)
     respond_to do |format|

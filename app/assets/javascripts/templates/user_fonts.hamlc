@@ -1,0 +1,7 @@
+%h2 MyFonts
+%ul
+	- console.log @user_fonts
+	- for i, font of @user_fonts
+		%li.font-simple = font.name
+		.clearfix
+	.clearfix

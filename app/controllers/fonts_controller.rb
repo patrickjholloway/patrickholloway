@@ -4,9 +4,7 @@ class FontsController < ApplicationController
     @fonts = Font.page(params[:page]).per(50)
     @current_user = current_user
     @user_fonts = @current_user.fonts
-    logger.info("font ids"<<@current_user.font_ids.inspect)
-    logger.info("THEid"<<@current_user.id)
-    logger.info(@fonts.first)
+   
     respond_to do |format|
           format.html
           format.json  { render :json => Font.all }

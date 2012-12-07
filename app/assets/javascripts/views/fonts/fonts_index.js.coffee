@@ -19,24 +19,26 @@ class Workshop.Views.FontsIndex extends Backbone.View
 		$(e.target).children('.icon-plus').removeClass('icon-white')
 	
 	stylizeFonts: ->	
-		$('.font').css('font-family', () -> $(this).text())
+		$('.font').css 'font-family', () -> $(this).text()
+		
 	addHideFont: (e) =>
 		$(e.target).hide()
 		clickedFontName = $(e.target).text().trim()	
 		userFonts = @persistent_user.get("font_ids")
 		clickedFont = @fonts.where({name: clickedFontName })[0]
-		userFonts.push(clickedFont.attributes._id)
-		@persistent_user.set("font_ids", userFonts)
-		@persistent_user.save {}, success: -> alert "success"
+		userFonts.push clickedFont.attributes._id
+		@persistent_user.set "font_ids", userFonts
+		@persistent_user.save()
 	
 	assignCurrentUser: =>
 		@persistent_user = new Workshop.Models.User({id: @current_user.id})
-		@persistent_user.fetch()	
+		@persistent_user.fetch()
+		@model = @persistent_user
 
 	fetchFonts: =>
 		@fonts = new Workshop.Collections.Fonts
 		@fonts.fetch()
 	
 	fetchCurrentUser: =>
-		@current_user = new Workshop.Models.Currentuser
-		@current_user.fetch({ success: => @assignCurrentUser() })
+		@current_user = new Workshop.Models.CurrentUser
+		@current_user.fetch { success: => @assignCurrentUser() }

@@ -29,7 +29,7 @@ class Workshop.Views.StylesNew extends Backbone.View
 			$('#font_size li').css 'line-height', () -> $(@).text()
 
 		fetchCurrentUser: =>
-			@current_user = new Workshop.Models.Currentuser
+			@current_user = new Workshop.Models.CurrentUser
 			@current_user.fetch({ success: => @assignCurrentUser() })
 
 		assignCurrentUser: =>
@@ -40,8 +40,6 @@ class Workshop.Views.StylesNew extends Backbone.View
 
 		reset: (ev) =>
 			$('#paragraph_unit').css({'font-size': "12pt"});
-			
-		
 		
 		updateTargetedFont: (ev) =>
 			$(@target).css('font-family', $(ev.target).css('font-family'))
