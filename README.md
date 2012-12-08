@@ -28,3 +28,9 @@ You can look at the code in progress by cloning the demo-app branch. Please keep
 Right now I am working on adding a backbone.js layer that takes over AJAX events on a few user interface elements that I want to be more dynamic. These days relying on rails and jQuery for AJAX doesn't cut it. I think we are starting to see the need to remove the Action View layer of Rails and have our view layer taken over by thick-client systems like Ember.js.
 
 While things are being sorted out, especially when working with brownfield apps, Backbone provides a great tool to selectively add rich AJAX user interfaces where it's appropriate in your application. I am using coffee-haml templates, this makes it easier to cut and paste from my Action View haml templates.
+
+Also keep in mind that if you pull down and install the demo app, you need to have Mongo installed and running. If I recall you just need to open the shell and run the following:
+
+    brew install mongo
+
+    mongod
