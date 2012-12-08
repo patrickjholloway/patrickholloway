@@ -1,7 +1,3 @@
-:javascript
-	$(function() {
-		Workshop.new.initialize();
-	});
 #dashboard
 	%h1 Font Tester
 	#controls
@@ -50,3 +46,7 @@
 						- 1.1
 						- 1.2
 						- 1.4
+:javascript
+	$('document').ready() {
+		Workshop.new.initialize();
+	});

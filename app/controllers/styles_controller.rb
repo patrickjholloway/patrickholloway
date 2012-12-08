@@ -1,5 +1,6 @@
 class StylesController < ApplicationController
   respond_to :json
+  before_filter :authenticate_user!
 
   def index
     @styles = Style.page(params[:page]).per(50)
@@ -11,8 +12,10 @@ class StylesController < ApplicationController
   
   def new
     @style = Style.new
-    @current_user = current_user
-    @user_fonts = @current_user.fonts
+    @user = current_user
+    logger.info("CURRENT USSSSEERRRR")
+    logger.info(current_user)
+    @user_fonts = @user.fonts
   end
 
   def show
