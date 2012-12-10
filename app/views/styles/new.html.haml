@@ -1,0 +1,45 @@
+#dashboard.row
+	#controls.row
+		.span13
+			.row
+				= form_tag "update" do
+					= label_tag "Name"
+					= text_field_tag :name, nil, id: "name_field"
+				%article.span6
+					%hgroup
+						%h1#header_unit Web Font Workshop
+						%h2#subheader_unit Test your font combos.
+					%p#paragraph_unit This paragraph exemplifies the type of paragraph that would be used in an example paragraph. If there were a different type of paragraph it might say something different, but it isn't. Don't expect to get a different paragraph any time soon. This is as good as it is going to get.
+				%section#font_size.span3
+					:markdown
+						-  40pt
+						-  36pt
+						-  32pt
+						-  28pt
+						-  24pt
+						-  20pt
+						-  16pt
+						-  12pt
+						-  10.5pt
+				%section#fonts.span3
+					- @user_fonts.each do |font|
+						- content_for :head do
+							= google_webfonts_link_tag font.data["family"] => font.data["variants"]
+						%span.font
+							= font.data["family"]
+						%span.font-delete
+							%i.icon-minus.pull-right
+	#dashboard_nav
+		.dashboard_nav_inner
+			#save
+				.btn.btn-success
+					%i.icon-file.icon-white
+					Save
+			#reset
+				= link_to '#', {class: "btn btn-danger"}  do
+					%i.icon-fire.icon-white
+					Reset
+:javascript
+			$('document').ready(function(){
+				Workshop.new_style.initialize();
+			})

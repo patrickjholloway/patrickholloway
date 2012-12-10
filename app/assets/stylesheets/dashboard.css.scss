@@ -1,0 +1,150 @@
+.font {
+	float:left;
+	padding:15px;
+	padding-left:17px;
+	padding-right:17px;
+	border-radius:5px;
+	margin-bottom:1px;
+	margin-right:1px;
+	cursor:pointer;
+	font-size:16pt;
+	background-color:#DEE;
+	color:#000;
+	width:80%;
+
+	&:hover {
+		background-color:#699;
+		color:#fff;
+	}
+}
+
+.pagination {
+}
+
+#user_fonts{
+	ul {
+		background-color:#666;
+		padding:2px;
+		padding-left:40px;
+		margin-left:-10px;
+		width:158px;
+		@include border-radius(2px);
+		@include vert-padding(4px);
+	}
+
+	li.font-simple {
+		list-style:none;
+		float:left;
+		width:145px;
+		margin-top:1px;
+		padding:5px;
+		background-color:#fff;
+		padding-left:40px;
+		margin-left:-35px;
+		cursor:pointer;
+		&:hover {
+			background-color:#eee;
+		}
+	}
+}
+
+#dashboard {
+
+	#controls {
+		margin-top:20px;
+	}
+
+	ul {
+		li {			
+			list-style:none;
+		}
+	}
+
+	#dashboard_nav {
+		position:relative;
+		height:75px;
+		background-color:#eee;
+		overflow-y:auto;
+	}
+
+	.dashboard_nav_inner
+	{
+		margin-top:10px;
+		margin-left:10px;
+		padding:10px;
+		background-color:#ddd;
+		height:34px;
+		@include border-radius(5px);
+		width:164px;
+		-webkit-box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, .2);
+		box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, .2);
+	}
+
+	.font {
+		float:left;
+		padding:5px;
+		padding-left:7px;
+		padding-right:7px;
+		border-radius:5px;
+		margin-bottom:1px;
+		margin-right:1px;
+		cursor:pointer;
+		font-size:12pt;
+		background-color:#DEE;
+		color:#000;
+		
+
+		&:hover {
+			background-color:#699;
+			color:#fff;
+		}
+		width:70%;
+	}
+
+	.font-delete {
+		float:left;
+		padding:5px;
+		padding-left:7px;
+		padding-right:7px;
+		border-radius:5px;
+		margin-bottom:1px;
+		margin-right:1px;
+		cursor:pointer;
+		background-color:#ddd;
+		color:#000;
+		height:20px;
+		opacity:.2;
+		i {
+			margin-top:3px;
+			margin-left:2px
+		}
+
+		&:hover {
+			opacity:.9;
+			background-color:red;
+		}
+	}
+
+	#header_unit {
+		cursor: pointer;
+	}
+
+	#subheader_unit {
+		cursor: pointer;
+	}
+	#paragraph_unit {
+		cursor: pointer;
+	}
+
+	#font_size li {
+		cursor:pointer;
+		float:left;
+		clear:both;
+	}
+
+	#save, #reset {
+		@include box-reset;
+		float:left;
+		margin-right:3px;
+	}
+}

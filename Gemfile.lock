@@ -7,6 +7,17 @@ GIT
       sass (>= 3.2)
 
 GIT
+  remote: git://github.com/mongodb/mongo-ruby-driver.git
+  revision: a81f7117b6730385d1263799811f0d7baa9d55d0
+  specs:
+    bson (1.8.0)
+      activesupport
+    bson_ext (1.8.0)
+      bson (~> 1.8.0)
+    mongo (1.8.0)
+      bson (~> 1.8.0)
+
+GIT
   remote: https://github.com/rails/sass-rails.git
   revision: bdfeb7ba71eae9ab0b214190319e109bbb0a9fe7
   branch: 3-2-stable
@@ -17,7 +28,7 @@ GIT
       tilt (~> 1.3)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://gemcutter.org/
   specs:
     actionmailer (3.2.8)
       actionpack (= 3.2.8)
@@ -40,10 +51,6 @@ GEM
       activesupport (= 3.2.8)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activerecord-postgres-hstore (0.4.1)
-      pg
-      rails
-      rake
     activeresource (3.2.8)
       activemodel (= 3.2.8)
       activesupport (= 3.2.8)
@@ -51,8 +58,12 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
-    bootstrap-will_paginate (0.0.9)
-      will_paginate
+    backbone-on-rails (0.9.2.3)
+      eco
+      ejs
+      jquery-rails
+      rails (>= 3.1)
+    bcrypt-ruby (3.0.1)
     builder (3.0.4)
     capybara (2.0.1)
       mime-types (>= 1.16)
@@ -64,6 +75,9 @@ GEM
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     client_side_validations (3.2.1)
+    client_side_validations-mongoid (3.0.1)
+      client_side_validations (~> 3.2.0)
+      mongoid (~> 3.0.0)
     coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -74,9 +88,18 @@ GEM
     coffee-script-source (1.4.0)
     commonjs (0.2.6)
     daemons (1.1.9)
-    devise (1.1.rc0)
-      warden (~> 0.10.3)
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
     diff-lcs (1.1.3)
+    eco (1.0.0)
+      coffee-script
+      eco-source
+      execjs
+    eco-source (1.1.0.rc.1)
+    ejs (1.1.1)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -87,6 +110,8 @@ GEM
       factory_girl (~> 4.1.0)
       railties (>= 3.0.0)
     ffi (1.2.0)
+    google-webfonts (0.1.2)
+      actionpack (>= 3.0.0)
     growl (1.0.3)
     guard (1.5.4)
       listen (>= 0.4.2)
@@ -107,6 +132,10 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (~> 3.1)
       railties (>= 3.1, < 4.1)
+    haml_coffee_assets (1.8.2)
+      coffee-script (>= 1.0.0)
+      sprockets (>= 2.0.3)
+      tilt (>= 1.3.3)
     hike (1.2.1)
     hpricot (0.8.6)
     i18n (0.6.1)
@@ -118,12 +147,17 @@ GEM
       jquery-rails
       railties (>= 3.1.0)
     json (1.7.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kaminari-bootstrap (0.1.3)
+      kaminari (>= 0.13.0)
+      rails
     less (2.2.2)
       commonjs (~> 0.2.6)
     less-rails (2.2.6)
       actionpack (>= 3.1)
       less (~> 2.2.0)
-    libv8 (3.3.10.4)
     libwebsocket (0.1.6.1)
       websocket
     listen (0.6.0)
@@ -134,9 +168,16 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.19)
+    mongoid (3.0.14)
+      activemodel (~> 3.1)
+      moped (~> 1.1)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.22)
+    moped (1.3.1)
     multi_json (1.3.7)
     nokogiri (1.5.5)
-    pg (0.14.1)
+    origin (1.0.11)
+    orm_adapter (0.4.0)
     polyglot (0.3.3)
     pry (0.9.10)
       coderay (~> 1.0.5)
@@ -184,6 +225,8 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
+    ruby_parser (3.0.1)
+      sexp_processor (~> 4.1)
     rubyzip (0.9.9)
     sass (3.2.3)
     selenium-webdriver (2.26.0)
@@ -191,13 +234,13 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+    sexp_processor (4.1.2)
     slop (3.3.3)
     spork (0.9.2)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.6)
     sys-proctable (0.9.2)
     therubyracer (0.10.2)
       libv8 (~> 3.3.10)
@@ -217,10 +260,9 @@ GEM
     valid_email (0.0.4)
       activemodel
       mail
-    warden (0.10.7)
-      rack (>= 1.0.0)
+    warden (1.2.1)
+      rack (>= 1.0)
     websocket (1.0.4)
-    will_paginate (3.0.3)
     xpath (1.0.0)
       nokogiri (~> 1.3)
 
@@ -228,33 +270,38 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-postgres-hstore (~> 0.4.1)
   anjlab-bootstrap-rails!
-  bootstrap-will_paginate
+  backbone-on-rails
+  bson_ext
   capybara
   client_side_validations
+  client_side_validations-mongoid
   coffee-rails (~> 3.2.1)
-  devise
+  devise (~> 2.1.2)
   execjs
   factory_girl_rails
+  google-webfonts
   growl
   guard-rspec
   guard-spork (= 1.2.0)
   haml-rails
+  haml_coffee_assets (~> 1.8.2)
   hpricot
   jquery-rails
   jquery-ui-rails
+  kaminari-bootstrap (~> 0.1.3)
   less-rails
   mail (= 2.4.4)
-  pg
+  mongo!
+  mongoid (~> 3.0.14)
   rails (= 3.2.8)
   rake (= 10.0.2)
   rb-fsevent
   rdiscount
   rspec-rails
+  ruby_parser
   sass-rails!
   spork (= 0.9.2)
-  sqlite3
   therubyracer
   thin
   uglifier (>= 1.0.3)
