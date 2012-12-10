@@ -2,6 +2,9 @@
 	#controls.row
 		.span13
 			.row
+				= form_tag "update" do
+					= label_tag "Name"
+					= text_field_tag :name, nil, id: "name_field"
 				%article.span6
 					%hgroup
 						%h1#header_unit Web Font Workshop
@@ -17,6 +20,7 @@
 						-  20pt
 						-  16pt
 						-  12pt
+						-  10.5pt
 				%section#fonts.span3
 					- @user_fonts.each do |font|
 						- content_for :head do
@@ -28,7 +32,7 @@
 	#dashboard_nav
 		.dashboard_nav_inner
 			#save
-				= link_to '#', {class: "btn btn-success"}  do
+				.btn.btn-success
 					%i.icon-file.icon-white
 					Save
 			#reset

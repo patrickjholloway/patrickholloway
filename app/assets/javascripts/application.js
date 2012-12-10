@@ -1,5 +1,5 @@
 //= require jquery
-//= require jquery.ui.all
+//= require jquery.ui.all.js
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require rails.validations
