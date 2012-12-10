@@ -1,6 +1,0 @@
-development:
-  sessions:
-    default:
-      database: mongoid
-      hosts:
-        - mongodb://heroku:password@linus.mongohq.com:10017/app9584849
