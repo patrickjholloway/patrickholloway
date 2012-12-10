@@ -4,6 +4,7 @@ ruby "1.9.3"
 
 gem 'rails', '3.2.8'
 gem 'rake', '10.0.2'
+gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', branch: '3-2-stable'
 gem 'valid_email', :require => 'valid_email/email_validator'
 gem "mail", "2.4.4"
 gem 'mongo', :git => 'git://github.com/mongodb/mongo-ruby-driver.git'
@@ -43,7 +44,6 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', branch: '3-2-stable'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
