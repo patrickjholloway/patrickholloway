@@ -51,5 +51,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem "haml_coffee_assets", "~> 1.8.2"
   gem 'execjs'
+  gem 'libv8'
   gem 'therubyracer'
 end
