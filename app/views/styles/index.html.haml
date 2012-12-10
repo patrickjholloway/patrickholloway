@@ -1,4 +1,6 @@
 %h2 Styles
+%p Here you can browse through all styles added by users.
+= link_to "Create Your Own", new_style_path, class: "btn btn-success pull-right"
 = paginate @styles
 .span7
 	- @styles.each do |style|

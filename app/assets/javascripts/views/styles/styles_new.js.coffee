@@ -3,6 +3,7 @@ class Workshop.Views.StylesNew extends Backbone.View
 		el: "#content_wrapper"
 		
 		initialize: ->
+			$(".alert").alert()
 			@style = new Workshop.Models.Style
 			@stylizeUserFonts()
 			@stylizeFontSize()

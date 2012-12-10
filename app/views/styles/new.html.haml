@@ -1,6 +1,14 @@
 #dashboard.row
 	#controls.row
 		.span13
+			.alert.fade.in
+				%button.close{"data-dismiss" => "alert"} ×
+				:markdown
+					## New Style
+					
+					Create custom styles by pick a unique font and font size for each element. You can click the Heading, Sub-heading, or Paragraph elements below once to change your target. Then just click a font or font size to test it out, you will see your changes right away.
+
+					Just click save when you are done and you can view them in the [Styles](http://www.digitalpixelpro.com/styles) page.
 			.row
 				= form_tag "update" do
 					= label_tag "Name"
@@ -22,13 +30,15 @@
 						-  12pt
 						-  10.5pt
 				%section#fonts.span3
-					- @user_fonts.each do |font|
-						- content_for :head do
-							= google_webfonts_link_tag font.data["family"] => font.data["variants"]
-						%span.font
-							= font.data["family"]
-						%span.font-delete
-							%i.icon-minus.pull-right
+					= link_to "Add some fonts", fonts_path
+					- if @user_fonts.count	
+						- @user_fonts.each do |font|
+							- content_for :head do
+								= google_webfonts_link_tag font.data["family"] => font.data["variants"]
+							%span.font
+								= font.data["family"]
+							%span.font-delete
+								%i.icon-minus.pull-right
 	#dashboard_nav
 		.dashboard_nav_inner
 			#save
