@@ -5,7 +5,6 @@ ruby "1.9.3"
 gem 'rails', '3.2.8'
 gem 'rake', '10.0.2'
 gem 'valid_email', :require => 'valid_email/email_validator'
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "mail", "2.4.4"
 gem 'mongo', :git => 'git://github.com/mongodb/mongo-ruby-driver.git'
 gem 'bson_ext'
