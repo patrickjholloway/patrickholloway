@@ -75,9 +75,7 @@ class Workshop.Views.StylesNew extends Backbone.View
 			@saveHash["p_text_transform"] = $('#paragraph_unit').css('text-transform')
 			console.log @saveHash
 		
-		postStyle: ->
-			alert @style
-			@style.save( @saveHash, { url: '/styles', success: -> alert "Your style has been saved!" })
+		postStyle: -> @style.save( @saveHash, { url: '/styles', success: -> alert "Your style has been saved!" })
 		
 # Screen Behavior
 
