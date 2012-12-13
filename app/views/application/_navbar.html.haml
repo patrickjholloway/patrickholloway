@@ -9,6 +9,18 @@
 				-else
 					%li
 						%a{:href => home_path} Home
+				- if user_signed_in?
+					%li.dropdown
+						%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+							%span Styles
+							%span.caret
+						%ul.dropdown-menu
+							%li
+								= link_to "New Style", new_style_path
+							%li
+								= link_to "Browse Styles", styles_path
+					%li
+						= link_to "Browse Fonts", fonts_path
 				%li.dropdown
 					%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
 						%span More

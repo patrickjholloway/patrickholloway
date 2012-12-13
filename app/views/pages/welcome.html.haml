@@ -1,0 +1,33 @@
+#welcome.span10.row
+	.span2
+		%h2 Welcome
+		%ul.nav.nav-list
+			%li.nav-header Workshop
+			%li
+				%a{href:fonts_path}Browse Fonts
+			%li
+				%a{href:styles_path}Browse Styles
+			%li
+				%a{href:new_style_path}New Style
+	.span7.offset1
+		#welcome_box.color-box
+			:markdown
+				#### What can I do here?
+				You can browse through Google Web Fonts, add them to your user account. You can preview them in the context of an article with a heading, lead, and paragraph.
+
+				While styling the article you can change the font and font-size for each section. Once you are satisfied with the style you may save it and share it with other users.
+
+				#### Why?
+
+				Often times as a web designer, choosing a font is difficult when you can't see it in context. Picking individual fonts from Google Web Fonts and swapping them in and out manually in your stylesheets is a pain.
+				
+				This tool makes it easy to preview different combinations and share them with others. Enjoy!
+		- 8.times do
+			%i.icon-arrow-down.pull-left
+		#welcome_style.transparent-box.span5
+			:markdown
+				## Web Font Workshop
+				#### This is a lead.
+				This here is a paragraph. Aliquam vel lorem ligula, a egestas arcu. Nunc a blandit lorem. Donec pellentesque tortor sit amet nibh hendrerit adipiscing. Aliquam tincidunt ultrices eros at condimentum.
+	
+				Curabitur mollis nibh turpis. Curabitur non magna in dolor ullamcorper elementum. Sed sit amet magna non odio molestie venenatis ut viverra dolor.

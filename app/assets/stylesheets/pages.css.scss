@@ -1,9 +1,29 @@
-$lt-blue:#dee;
-$red:#e55;
+#welcome {
+	width:100%;
+	i.icon-arrow-down {
+		@include margin-h(20px);
+	}
+	h1 {
+		width:20%;
+	}
+	
+	#welcome_box {
+		background-color:$lt-blue;
+	}
 
-.fixed-width {
-	width:960px;
-	margin:auto;
+	#welcome_style {
+		h2, h1 {
+			font-family:'Dancing Script';
+			font-weight:700;
+		}
+		h4, h3 {
+			font-family:'Oswald';
+			font-weight:normal;
+		}
+		p {
+			font-family:'Open Sans';
+		}
+	}
 }
 
 #side {
@@ -38,7 +58,7 @@ $red:#e55;
 #bio {
 	background-color:$lt-blue;
 	color:#000;
-	padding:19px;
+	padding:60px;
 	@include border-radius(6px);
 }
 

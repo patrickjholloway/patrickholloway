@@ -7,27 +7,10 @@
 /* Global mixins and variables */
 
 $background-color:rgb(40,40,40);
-$foreground-color:rgb(255,255,255);
-$lght-blue:#2A7A8C;
-$blue:#176273;
-$drk-blue:#063540;
-$brown:#403D3A;
-$lght-brwn:#E5D9CF;
-
-$hover:#FFBB12;
-$highlight-blue: #0084C7;
-
 $content-width:960px;
 $body-font: 'Verdana', sans-serif;
-$header-font:'Droid Sans', sans-serif;
-
-@mixin small-border{
-	border:1px solid black;
-}
-
-@mixin small-border-soft{
-	border:1px solid #999;
-}
+$lt-blue:#dee;
+$red:#e55;
 
 @mixin box-reset {
 	margin:0;
@@ -35,43 +18,22 @@ $header-font:'Droid Sans', sans-serif;
 	border:0;
 }
 
-@mixin box-type1 {
-	//@include small-border-soft;
-	padding:10px;
-	background-color:white;
-	color:#000;
-	width:100%;
-}
-
-@mixin box-type2 {
-	border:1px solid #333;
-	padding:10px;
-	background-color:white;
-	color:#000;
-	width:100%;
-}
-
-@mixin float-left-clear-both {
-	float:left;
-	clear:both;
-}
-
-@mixin padding-sides($padding) {
+@mixin padding-h($padding) {
 	padding-left:$padding;
 	padding-right:$padding;
 }
 
-@mixin margin-sides($margin) {
+@mixin margin-h($margin) {
 	margin-left:$margin;
 	margin-right:$margin;
 }
 
-@mixin vert-padding($padding) {
+@mixin padding-v($padding) {
 	padding-top:$padding;
 	padding-bottom:$padding;
 }
 
-@mixin vert-margin($margin) {
+@mixin margin-v($margin) {
 	margin-top:$margin;
 	margin-bottom:$margin;
 }
@@ -82,7 +44,20 @@ $header-font:'Droid Sans', sans-serif;
 	-moz-border-radius: $radius;
 }
 
-@import "pages.css.scss";
-@import "fonts.css.scss";
-@import "basic_layout.css.scss";
-@import "styles.css.scss";
+@mixin inner-shadow {
+	-webkit-box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, .2);
+	box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, .2);
+}
+
+@mixin basic-box {
+	background-color:#ddd;
+	@include border-radius(5px);
+	padding:20px;
+}
+
+
+@import "base_layout.css.scss";
+
+@import "pages.css.scss"; 	/* CSS for static pages */
+@import "fonts.css.scss"; 	/* CSS for 'fonts' views */
+@import "styles.css.scss"; 	/* CSS for 'styles' views */

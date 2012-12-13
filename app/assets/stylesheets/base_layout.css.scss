@@ -15,7 +15,6 @@ body {
 #main {
 	width:100%;
 	margin:0px auto !important;
-	//background-image:url("texture3.jpg");
 	background-size:13%;
 	background-repeat:repeat;
 	overflow-y:auto;
@@ -27,4 +26,33 @@ body {
 	min-height:700px;
 	margin:10px auto !important;
 	padding-bottom:50px !important;
+}
+
+.basic-box {
+	@include basic-box;
+}
+
+.transparent-box {
+	@include basic-box;
+	background-color:transparent;
+}
+
+.color-box {
+	@include basic-box;
+	background-color:$lt-blue;
+}
+
+
+.fixed-width {
+	width:960px;
+	margin:auto;
+}
+
+
+.wrap {
+	padding:25px;
+	margin-bottom:15px;
+	background-color:#fdfdfd;
+	@include border-radius(5px);
+	@include inner-shadow;
 }

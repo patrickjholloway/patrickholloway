@@ -1,4 +1,10 @@
-//$linkColor: green;
+/* Bootstrap import and overrides */
+
+.alert-block h2{
+	font-size:12pt;
+	line-height:12pt;
+}
+
 $linkColor:#e88;
 $linkColor:#699;
 $navbarBackground:#ddd;

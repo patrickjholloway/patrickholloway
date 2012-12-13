@@ -2,15 +2,6 @@ class Workshop.Views.StylesNew extends Backbone.View
 
 		el: "#content_wrapper"
 		
-		initialize: ->
-			$(".alert").alert()
-			@style = new Workshop.Models.Style
-			@stylizeUserFonts()
-			@stylizeFontSize()
-			@fetchCurrentUser()
-			@target = $('#header_unit')
-			_.bindAll(@)
-		
 		events:
 			'click .font': 'updateTargetedFont'
 			'click #header_unit': 'targetHeader'
@@ -19,7 +10,20 @@ class Workshop.Views.StylesNew extends Backbone.View
 			'click #font_size li': 'updateTargetedFontSize'
 			'click #save .btn': 'save'
 			'click #reset a': 'reset'
+			'click label': 'captureCSS'
 			
+		initialize: ->
+			$(".alert").alert()
+			@style = new Workshop.Models.Style
+			@stylizeUserFonts()
+			@stylizeFontSize()
+			@fetchCurrentUser()
+			@target = $('#header_unit')
+			_.bindAll @
+# Test
+		cobras: ->
+			alert "Triggid"
+		
 # Initialize only
 
 		stylizeUserFonts: ->

@@ -1,4 +1,5 @@
 class FontsController < ApplicationController
+  layout "demo"
   
   def index
     @fonts = Font.page(params[:page]).per(50)

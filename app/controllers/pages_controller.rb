@@ -12,4 +12,8 @@ class PagesController < ApplicationController
     @active = 'resume' # for bootstrap tab navbar
   end
   
+  def welcome
+    layout "demo"
+  end
+  
 end
