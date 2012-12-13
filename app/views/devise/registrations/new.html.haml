@@ -15,3 +15,7 @@
     = f.text_field :username
   %div= f.submit "Sign up", class: "btn"
 = render "devise/shared/links"
+:javascript
+  $('document').ready(function(){
+    Workshop.devise.initialize();
+  })

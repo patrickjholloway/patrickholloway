@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  layout "demo", only: "welcome"
+  before_filter :authenticate_user!, only: "welcome"
   
   def home
     @active = 'home' # for bootstrap tab navbar
@@ -13,7 +15,6 @@ class PagesController < ApplicationController
   end
   
   def welcome
-    layout "demo"
   end
   
 end

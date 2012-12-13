@@ -1,11 +1,10 @@
 #dashboard.row
 	#controls.row
 		.span13
-			.alert.fade.in
+			.alert.fade.in.alert-info
 				%button.close{"data-dismiss" => "alert"} ×
 				:markdown
-					## New Style
-					
+					#### New Style  
 					Create custom styles by pick a unique font and font size for each element. You can click the Heading, Sub-heading, or Paragraph elements below once to change your target. Then just click a font or font size to test it out, you will see your changes right away.
 
 					Just click save when you are done and you can view them in the [Styles](http://www.digitalpixelpro.com/styles) page.
@@ -49,3 +48,7 @@
 				= link_to '#', {class: "btn btn-danger"}  do
 					%i.icon-fire.icon-white
 					Reset
+:javascript
+	$('document').ready(function(){
+		Workshop.new_style.initialize();
+	})

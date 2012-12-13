@@ -13,4 +13,3 @@ window.Workshop =
 	devise:
 		initialize: ->
 			$("#error_explanation").addClass("alert alert-error alert-block")
-console.log(Workshop.pageView)

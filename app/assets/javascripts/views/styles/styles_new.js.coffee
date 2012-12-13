@@ -13,16 +13,15 @@ class Workshop.Views.StylesNew extends Backbone.View
 			'click label': 'captureCSS'
 			
 		initialize: ->
+			#bootstrap function for alert box
 			$(".alert").alert()
 			@style = new Workshop.Models.Style
 			@stylizeUserFonts()
 			@stylizeFontSize()
 			@fetchCurrentUser()
+			@fetchStyles()
 			@target = $('#header_unit')
 			_.bindAll @
-# Test
-		cobras: ->
-			alert "Triggid"
 		
 # Initialize only
 
@@ -32,6 +31,10 @@ class Workshop.Views.StylesNew extends Backbone.View
 		stylizeFontSize: ->
 			$('#font_size li').css 'font-size', () -> $(@).text()
 			$('#font_size li').css 'line-height', () -> $(@).text()
+
+		fetchStyles: =>
+			@styles = new Workshop.Collections.Styles
+			@styles.fetch()
 
 		fetchCurrentUser: =>
 			@current_user = new Workshop.Models.CurrentUser
@@ -45,7 +48,7 @@ class Workshop.Views.StylesNew extends Backbone.View
 
 		save: (ev) ->
 			@captureCSS()
-			@postStyle()
+			@validate()
 		
 		captureCSS: ->
 			@saveHash = {}
@@ -78,6 +81,17 @@ class Workshop.Views.StylesNew extends Backbone.View
 			@saveHash["sh_text_transform"] = $('#subheader_unit').css('text-transform')
 			@saveHash["p_text_transform"] = $('#paragraph_unit').css('text-transform')
 			console.log @saveHash
+		
+		validate: ->
+			matches = @styles.where(@saveHash["name"])
+			if matches.length > 0
+				alert "That style name is taken. Pick a unique name"
+			else
+				console.log(@saveHash["name"])
+				if _.isUndefined(@saveHash["name"])
+					alert "Please give your style a name."
+				else
+					@postStyle()
 		
 		postStyle: -> @style.save( @saveHash, { url: '/styles', success: -> alert "Your style has been saved!" })
 		

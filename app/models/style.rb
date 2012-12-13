@@ -18,4 +18,7 @@ class Style
   field :p_font_size, default: '12pt'
   field :p_line_height, default: '1pt'
   field :p_text_transform, default: 'normal'
+  
+  validates :name,    uniqueness: true,
+                      presence: true
 end
