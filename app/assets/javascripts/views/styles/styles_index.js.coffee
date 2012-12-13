@@ -18,8 +18,8 @@ class Workshop.Views.StylesIndex extends Backbone.View
 		$(@el).html @template
 		return @
 		
-	toggle_drawer: ->
-		$('.drawer').toggle('slideDown')
+	toggle_drawer: (ev) ->
+		$(ev.target).siblings('.drawer').toggle('slideDown')
 	
 	stylizeFonts: ->
 		$('.style hgroup h1').css 'font-family', () -> $(@).parent().parent().find('.h_font').text().trim()	
