@@ -1,22 +1,74 @@
 .row.span12
-	#style_list.span6
-		%h2 Styles
-		%p Here you can browse through all styles added by users.
+	#style_list.span7
+		%h1 Styles
+		%p.lead Browse through all user generated styles.
 		- @styles.each do |style|
-			.well
-				%h3
-					= style.name
-				-if style.user_ids[0]
-					= User.find_by(id: style.user_ids[0]).email
+			.color-box.style
 				%hgroup
 					%h1 Web Font Workshop
 					%h2 Test your font combos.
-					%p This paragraph exemplifies the type of paragraph that would be used in an example paragraph. If there were a different type of paragraph it might say something different, but it isn't. Don't expect to get a different paragraph any time soon. This is as good as it is going to get.
-	
-	#style_nav.span4
+					%p.preview This paragraph exemplifies the type of paragraph that would be used in an example paragraph. If there were a different type of paragraph it might say something different, but it isn't. Don't expect to get a different paragraph any time soon. This is as good as it is going to get.
+				%p
+					%b Style Name:
+					= style.name
+					%br
+					%b Author:
+					-if style.user_ids[0]
+						= User.find_by(id: style.user_ids[0]).email
+				.disclosure
+					%i.icon-chevron-down
+					%b Details
+				.drawer
+					.well
+						%h4 Header
+						%p
+							%b Font Family:
+							%span.h_font
+								= style.h_font_family
+						%p
+							%b Font Size
+							%span.h_size
+								= style.h_font_size
+					.well.sh_style
+						%h4 Lead
+						%p
+							%b Font Family:
+							%span.sh_font
+								= style.sh_font_family
+						%p
+							%b Font Size
+							%span.sh_size
+								= style.sh_font_size
+					.well.p_style
+						%h4 Paragraph
+						%p
+							%b Font Family:
+							%span.p_font
+								= style.p_font_family
+						%p
+							%b Font Size
+							%span.p_size
+							= style.p_font_size
+					
+	#style_nav.span2.offset2
 		%ul.nav.nav-list
 			%li.nav-header Workshop
 			%li
 				= link_to "New Style", new_style_path, class: "pill"
 				= link_to "Add More Fonts", fonts_path
 				= link_to "Log Out", destroy_user_session_path
+	- @styles.each do |style|
+		- if style.h_font_family[0] == "'"
+			- style.h_font_family[0]=''
+		- if style.sh_font_family[0] == "'"
+			- style.sh_font_family[0]=''
+		-if style.p_font_family[0] == "'"
+			- style.p_font_family[0]=''
+		- content_for :head do
+			%link{:href => "http://fonts.googleapis.com/css?family=#{style.h_font_family.gsub(' ',"+").chomp("'")}", :rel => "stylesheet", :type => "text/css"}
+			%link{:href => "http://fonts.googleapis.com/css?family=#{style.sh_font_family.gsub(' ',"+").chomp("'")}", :rel => "stylesheet", :type => "text/css"}
+			%link{:href => "http://fonts.googleapis.com/css?family=#{style.p_font_family.gsub(' ',"+").chomp("'")}", :rel => "stylesheet", :type => "text/css"}
+:javascript
+	$('document').ready(function(){
+		Workshop.style_index.initialize();
+	})

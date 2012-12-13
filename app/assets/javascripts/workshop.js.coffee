@@ -6,6 +6,9 @@ window.Workshop =
 	new_style:
 		initialize: ->
 			pageView = new Workshop.Views.StylesNew
+	style_index:
+		initialize: ->
+			pageView = new Workshop.Views.StylesIndex
 	fonts:
 		initialize: ->
 			pageView = new Workshop.Views.FontsIndex

@@ -1,0 +1,16 @@
+#style_list.span6
+	%h1 Styles
+	%p.lead Browse through all user generated styles.
+	- for i, style of @styles
+		.color-box
+			%hgroup
+				%h1 Web Font Workshop
+				%h2 Test your font combos.
+				%p This paragraph exemplifies the type of paragraph that would be used in an example paragraph. If there were a different type of paragraph it might say something different, but it isn't. Don't expect to get a different paragraph any time soon. This is as good as it is going to get.
+			%p
+				%b Style Name:
+				= style.name
+				%br
+				%b Author:
+				-if style.user_ids[0]
+					= User.find_by(id: style.user_ids[0]).email
