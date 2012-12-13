@@ -7,7 +7,6 @@
 //= require underscore
 //= require backbone
 //= require workshop
-//= require_tree ../templates
 //= require_tree ./templates
 //= require_tree ./models
 //= require_tree ./collections
