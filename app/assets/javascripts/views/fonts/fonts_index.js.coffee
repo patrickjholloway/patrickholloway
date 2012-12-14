@@ -22,9 +22,7 @@ class Workshop.Views.FontsIndex extends Backbone.View
 		$('.font').css 'font-family', () -> $(this).text()
 		
 	addHideFont: (e) =>
-		if $('#user_fonts ul').children().length > 13
-			$('#user_fonts ul').height($('#user_fonts ul').height()+30)
-		$('<li class=font-simple>'+$(e.target).text().trim()+'</li>').appendTo('#user_fonts.span3 ul')
+		$('<li class=font-simple>'+$(e.target).text().trim()+'</li><div class="clearfix"></div>').appendTo('#user_fonts.span3 ul')
 		$(e.target).hide()
 		clickedFontName = $(e.target).text().trim()	
 		userFonts = @persistent_user.get("font_ids")
