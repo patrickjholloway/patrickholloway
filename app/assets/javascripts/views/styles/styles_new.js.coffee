@@ -98,8 +98,19 @@ class Workshop.Views.StylesNew extends Backbone.View
 # Screen Behavior
 
 		reset: (ev) =>
-			$('#paragraph_unit').css({'font-size': "12pt"});
+			ev.preventDefault()
+			$('#paragraph_unit').css({'font-size': "10.5pt"});
+			$('#paragraph_unit').css({'line-height': "20px"});
+			$('#paragraph_unit').css({'font-family': "'Helvetica Neue', Helvetica, Arial, sans-serif"});
 		
+			$('#header_unit').css({'font-size': "39px"});
+			$('#header_unit').css({'line-height': "40px"});
+			$('#header_unit').css({'font-family': "'Helvetica Neue', Helvetica, Arial, sans-serif"});
+			
+			$('#subheader_unit').css({'font-size': "32px"});
+			$('#subheader_unit').css({'line-height': "40px"});
+			$('#subheader_unit').css({'font-family': "'Helvetica Neue', Helvetica, Arial, sans-serif"});
+			
 		updateTargetedFont: (ev) =>
 			$(@target).css('font-family', $(ev.target).css('font-family'))
 		
