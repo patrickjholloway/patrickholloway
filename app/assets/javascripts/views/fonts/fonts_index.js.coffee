@@ -10,7 +10,7 @@ class Workshop.Views.FontsIndex extends Backbone.View
 	events:
 		'mouseenter span': 'whiteIcon'
 		'mouseleave span': 'blackIcon'
-		'click span': 'test'
+		'click span': 'addHideFont'
 
 	whiteIcon: (e) =>
 		$(e.target).children('.icon-plus').addClass('icon-white')
@@ -20,14 +20,10 @@ class Workshop.Views.FontsIndex extends Backbone.View
 	
 	stylizeFonts: ->	
 		$('.font').css 'font-family', () -> $(this).text()
-	
-	test: (e) ->
-		height = $('#user_fonts ul').height()
+		
+	addHideFont: (e) =>
 		if $('#user_fonts ul').children().length > 13
 			$('#user_fonts ul').height($('#user_fonts ul').height()+30)
-		$('<li class=font-simple>'+$(e.target).text().trim()+'</li>').appendTo('#user_fonts.span3 ul')
-	
-	addHideFont: (e) =>
 		$('<li class=font-simple>'+$(e.target).text().trim()+'</li>').appendTo('#user_fonts.span3 ul')
 		$(e.target).hide()
 		clickedFontName = $(e.target).text().trim()	
