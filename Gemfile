@@ -2,7 +2,7 @@ source 'http://gemcutter.org'
 require 'open-uri'
 ruby "1.9.3"
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'rake', '10.0.2'
 gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', branch: '3-2-stable'
 gem 'valid_email', :require => 'valid_email/email_validator'
