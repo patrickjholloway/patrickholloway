@@ -1,22 +1,17 @@
 .row
-	.hero-unit.span6
-		%h1 Patrick Holloway
-		%h2.lead Junior Rails Developer
-		%p.pull-left
-			%dl
-				%dt Front End & UX Design
-				%dd HTML, CSS, Javascript
-				%dd jQuery & jQuery UI
-				%dd AJAX
-				%dd Twitter Bootstrap
-				%dd Adobe Creative Suite
-			%dl
-				%dt Rails Development
-				%dd HAML & SASS
-				%dd Various SQL flavors
-				%dd Experience with NoSQL (Mongo, Couch DB, and Neo4j)
-				%dd Cloud deployment (Heroku, AWS)
-				%dd Implementing all manner of open source ruby gems
-				%dd Incorporating available RESTful web APIs
-		%a{href: styles_path, class: "btn btn-primary btn-large demo pull-right"}Demo
-	= render partial: "sidenav"
+  .hero-unit.span6
+    %h1 Patrick Holloway
+    %h2.lead Junior Rails Developer | PatientsLikeMe.com
+    %p
+      :markdown
+        Welcome to my site,
+    %p
+      This site was started as place to send prospective employers, but now that I am happily employed, it is a repository to collect my ramblings and side projects.
+    %p
+      Here are a few projects I have going:
+      %ul
+        %li
+          %a= link_to "Font Lab", "/users/sign_in"
+        %li
+          %a= link_to "CSS Splitter", "#"
+  = render partial: "sidenav"

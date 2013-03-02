@@ -11,7 +11,8 @@ class PagesController < ApplicationController
   end
   
   def resume
-    @active = 'resume' # for bootstrap tab navbar
+    redirect_to '/', notice: "I am not looking for a job!"
+    #@active = 'resume' # for bootstrap tab navbar
   end
   
   def welcome
