@@ -9,9 +9,14 @@
       This site was started as place to send prospective employers, but now that I am happily employed, it is a repository to collect my ramblings and side projects.
     %p
       Here are a few projects I have going:
-      %ul
-        %li
+      %dl
+        %dt
+          %a= link_to "Dungeon Post", "https://github.com/patrickjholloway/dungeon-post"
+        %dd.spaced-vertical
+          An web client I am building for hosting the tabletop RPG, Pathfinder. I built this to teach myself Ember.js.
+        %dt
           %a= link_to "Font Lab", "/users/sign_in"
-        %li
-          %a= link_to "CSS Splitter", "#"
+        %dd.spaced-vertical
+          An app I started to build to get my foot in the door at PatientsLikeMe.(Quickly abandoned after being hired)
+
   = render partial: "sidenav"
