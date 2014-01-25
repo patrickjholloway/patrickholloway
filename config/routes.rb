@@ -11,6 +11,7 @@ Patrickholloway::Application.routes.draw do
   
   get '/welcome' => 'pages#welcome', as: 'welcome'
   get '/about' => 'pages#about', as: 'about'
+  get 'talks' => 'pages#talks', as: 'talks'
   get '/home' => 'pages#home', as: 'home'
   get '/resume' => 'pages#resume', as: 'resume'
   
